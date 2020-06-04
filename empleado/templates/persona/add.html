@@ -1,0 +1,59 @@
+{%extends "base.html"%}
+{%block titulo%}
+	Crer persona
+{%endblock titulo%}
+{%block contenido%}
+{%include "includes/header.html"%}
+	<div class="grid-x">
+		<h1 class="cell">
+			registrar empleado
+			<form class="cell grid-x grid-margin-x" method="post" enctype="multipart/form-data">{% csrf_token%}
+			 	<div class="medium-6 cell">
+        			<label>nombres:
+         			 	{{form.first_name}}
+
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>apellidos:
+         			 	{{form.last_name}}
+         
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>trabajo:
+         			 	{{form.job}}
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>departamento:
+         			 	{{form.departamento}}
+         			 	
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>habilidades:
+         			 	{{form.habilidades}}
+         			 	
+        				</label>
+     				 </div>
+     				  <div class="medium-12 cell">
+     				 <label>avatar:
+         			 	{{form.avatar}}
+         			 	
+        				</label>
+     				 </div>
+
+
+     				  <div class="medium-12 cell">
+     				 	<button type ="submit"class="button success">guardar</button>
+     				 </div>	
+
+				</form>
+			</h1>
+		</div>
+{%endblock contenido%}

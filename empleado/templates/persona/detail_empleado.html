@@ -1,0 +1,44 @@
+{%extends 'base.html' %}
+{%load static %}
+{%block titulo%}Detalle {%endblock titulo%}
+{%block contenido%}
+{%include 'includes/header.html'%}
+<div class= "grid-container">
+  <div class="grid-x grid-margin-x align-center">
+     <div class="cell large-4 card" style="width: 300px;">
+      <div class="card-divider">
+            {{empleado.get_job_display}}
+          </div>
+          {% if empleado.avatar %}
+            <img src="{{empleado.avatar.url}}">
+            {% else %}
+            <img src="{% static 'img/usuario.jpg' %}" style="width:500px; margin-top:10px;">
+          {% endif %}
+          
+          <div class="card-section">
+            {% if empleado.full_name %}
+              <h4>{{empleado.full_name}}</h4>
+              {% else %}
+              <h4>{{empleado.last_name}}  {{empleado.first_name}}</h4>
+            {% endif %}
+              <p> nombre :{{empleado.first_name}} </p>
+              <p> apellido :{{empleado.last_name}}</p>
+              <p> departamento: {{empleado.departamento.shor_name}}
+              <p> <span class="laber">habilidades : </span> </p>
+              <ul class="verical menu">
+                {% for h in empleado.habilidades.all  %}
+                    <li>
+                      {{ h.habilidad }}
+                    </li>
+                {% endfor %}
+              </ul>
+              
+          </div>
+      </div>
+    </div>
+      <a class="button primary" href="{% url 'persona_app:empleados_all'%}">Regresar al listar</a>
+
+  </div>
+
+{%endblock contenido%}
+

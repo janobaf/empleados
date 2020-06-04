@@ -1,0 +1,25 @@
+{% load static %}
+
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="device-width,initial-scale=1.0">
+	<meta http-equiv="x-UA-Compatible" content="ie=edge">
+	<title>Prueba</title>
+	<link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+</head>
+<body>
+    <h1>Resumen </h1>
+    <div class ="grid-x" style="border: 1px solid green;">
+    	 <h2 class="cell small-12 large-10" style="border: 1px solid red;">
+    	  elemento 1 </h2>
+    	 <h2 class="cell large-2"> elemento 2 </h2>
+    	 <h2 class="cell"> elemento 3 </h2>
+    	 <div class=" cell large-4 grid-x">
+    	 	<h4 class="cell large-4"> otro elemto 1</h4>
+    	 	<h4 class="cell large-4"> otro elemento 2</h4>
+    	 </div>
+    </div>
+</body>
+ 
+</html>

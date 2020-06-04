@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+{%block titulo%}
+Registrar nuevo 
+{%endblock titulo%}
+
+{%block contenido%}
+  {%include "includes/header.html"%}
+	<div class="grid-container">
+		<h1 class="cell">
+			registrar empleado y departamento
+			<form class="cell callout grid-x grid-margin-x" method="post" enctype="multipart/form-data">{% csrf_token%}
+			 	<div class="medium-6 cell">
+        			<label>nombres:
+         			 	{{form.nombre}}
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>apellidos:
+         			 	{{form.apellidos}}
+         
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>departamento:
+         			 	{{form.departamento}}
+        				</label>
+     				 </div>
+
+     				 <div class="medium-6 cell">
+     				 <label>	shor_name:
+         			 	{{form.shor_name}}
+         			 	
+        				</label>
+
+     				  <div class="medium-12 cell">
+     				 	<button type ="submit"class="button success">guardar</button>
+     				 </div>	
+
+				</form>
+			</h1>
+		</div>
+  }
+
+{%endblock contenido%}
+

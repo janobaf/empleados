@@ -1,0 +1,44 @@
+{%extends  'base.html' %}
+{% block titulo%}
+Listar Empleados 
+{%endblock titulo%}
+{%block contenido%}
+{%include "includes/header.html" %}
+<div class="grid-container">
+	<div class="grid-x">
+		<div class="cell">
+			empleadoss por area
+		</div>
+		<div class="cell">
+				<div class="cell">
+  			<table>
+    <thead>
+      <tr>
+        <th width="200">id</th>
+        <th>nombres</th>
+        <th width="150">apellidos</th>
+         <th width="150">departamento</th>
+        <th width="150">accion</th>
+      </tr>
+    </thead>
+    <tbody>
+    	 {%for e in object_list %}
+      <tr>
+        <td>{{e.id}}</td>
+        <td>{{e.first_name}}</td>
+        <td>{{e.last_name}}</td>
+        <td>{{e.departamento}}</td>
+        <td><a class="button warning" href="{% url 'persona_app:empleado_detail' e.id %}">ver</a></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+		</div>
+
+	</div>
+</div>
+    <a class="button primary" href="{% url 'persona_app:empleados_all'%}">Regresar al listar</a>  
+</div>
+
+
+{%endblock contenido %}
